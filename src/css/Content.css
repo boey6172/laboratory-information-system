@@ -1,3 +1,7 @@
+.roundLogo{
+  border-radius: 50%;
+
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -36,8 +40,4 @@
 @page {
   size: auto;
   margin: 10mm 15mm 10mm 15mm;
-}
-.test{
-  border-radius: 50%;
-
 }

@@ -7,7 +7,7 @@ const Logo = (props) => {
       src="/static/images/lab.png"
       {...props}
       height="50"
-      id='test'
+      className='roundLogo'
     />
   );
 };
