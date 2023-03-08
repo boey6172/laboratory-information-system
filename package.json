@@ -2,10 +2,11 @@
   "name": "laboratory-information-system",
   "version": "1.0.0",
   "description": "Laboratory Information System ",
-  "main": "/src/login.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -16,12 +17,45 @@
   "bugs": {
     "url": "https://github.com/boey6172/laboratory-information-system/issues"
   },
-  "homepage": "https://github.com/boey6172/laboratory-information-system#readme",
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "axios": "^0.24.0",
+    "chart.js": "^3.7.1",
+    "formik": "^2.2.9",
+    "moment": "^2.29.1",
+    "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-hook-form": "^7.43.5",
-    "react-scripts": "^5.0.1"
+    "react-backdrop-filter": "^2.1.0",
+    "react-chartjs-2": "^2.10.0",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-dom": "^17.0.2",
+    "react-feather": "^2.0.9",
+    "react-helmet": "^6.1.0",
+    "react-hook-form": "^7.22.5",
+    "react-perfect-scrollbar": "^1.5.8",
+    "react-reveal": "^1.2.2",
+    "react-router": "^6.0.1",
+    "react-router-dom": "^6.0.0-beta.0",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^1.1.2",
+    "yup": "^0.32.11"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
