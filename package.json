@@ -2,9 +2,10 @@
   "name": "laboratory-information-system",
   "version": "1.0.0",
   "description": "Laboratory Information System ",
-  "main": "index.js",
+  "main": "/src/login.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "react-scripts start"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/boey6172/laboratory-information-system/issues"
   },
-  "homepage": "https://github.com/boey6172/laboratory-information-system#readme"
+  "homepage": "https://github.com/boey6172/laboratory-information-system#readme",
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "react": "^17.0.2",
+    "react-hook-form": "^7.43.5",
+    "react-scripts": "^5.0.1"
+  }
 }
