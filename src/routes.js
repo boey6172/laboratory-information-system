@@ -23,6 +23,8 @@ import CreateRegionAssignment from '../src/views/admin/maintenances/regionAssign
 import CreateReligion from '../src/views/admin/maintenances/religion/create';
 import Religion from '../src/views/admin/maintenances/religion';
 
+//exams
+import Exam from '../src/views/admin/maintenances/exam';
 
 import Signup from '../src/views/signup';
 
@@ -120,6 +122,10 @@ const routes = [
       {
         path: 'maintenance/religion', 
         element: <PrivateAdminRoute component= {Religion} />
+      },
+      {
+        path: 'maintenance/exams', 
+        element: <PrivateAdminRoute component= {Exam} />
       },
       { path: '404', element: <NotFoundView /> },
       { path: '*', element: <Navigate to="/admin/404" /> }
