@@ -34,6 +34,7 @@ import {
   EventAvailable,
   AccountBalance,
   Group,
+  Receipt
 } from "@material-ui/icons";
 import {
   People as PeopleIcon,
@@ -52,6 +53,7 @@ import StarBorder from "@material-ui/icons/StarBorder";
 import "../../../css/Content.css";
 import NavItem from "./NavItem";
 import useAuthentication from "../../../hooks/useAuthentication";
+
 
 
 
@@ -85,17 +87,21 @@ const dashboard = [
   },
 ];
 
-const attendanceNav = [
+const patientNav = [
   {
     href: "/admin/employee",
     icon: "",
-    title: " • Employees",
+    title: " • Patients",
   },
-  {
-    href: "/admin/maintenance/users",
-    icon: "",
-    title: " • Users",
-  },
+  
+];
+const requestNav = [
+
+{
+  href: "/admin/maintenance/users",
+  icon: "",
+  title: " • Users",
+},
 ];
 
 const employeeNav = [
@@ -132,6 +138,11 @@ const adminMaintenance = [
     href: '/admin/maintenance/regionAssignment',
     icon: "",
     title: '• Region Assignment '
+  },
+  {
+    href: '/admin/maintenance/Exams',
+    icon: "",
+    title: '• Examinations '
   },
 ];
 
@@ -188,6 +199,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const [openMaintenance, setOpenMaintenance] = React.useState(false);
   const [open201Files, setOpen201Files] = React.useState(false);
   const [openAttendance, setOpenAttendance] = React.useState(false);
+  const [openRequest, setOpenRequest] = React.useState(false);
   const { setToken, setUser, getToken, getUser, } = useAuthentication();
   // const { getUser } = useAuthentication();
   // const credentials = getUser();
@@ -201,7 +213,9 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   const handleClickAttendance = () => {
     setOpenAttendance(!openAttendance);
   };
-
+  const handleClickRequest = () => {
+    setOpenRequest(!openRequest);
+  };
   const handleClickMaintenance = () => {
     setOpenMaintenance(!openMaintenance);
   };
@@ -299,19 +313,47 @@ const NavBar = ({ onMobileClose, openMobile }) => {
                 <Group />
               </ListItemIcon>
               <Typography className={classes.navTitle} variant="body2">
-                Employees
+                Patients 
               </Typography>{" "}
               {openAttendance ? (
-                <ExpandMore style={{ color: "#637381", marginLeft: "80px" }} />
+                <ExpandMore style={{ color: "#637381", marginLeft: "98px" }} />
               ) : (
                 <ChevronRight
-                  style={{ color: "#637381", marginLeft: "80px" }}
+                  style={{ color: "#637381", marginLeft: "98px" }}
                 />
               )}
             </ListItem>
             <Collapse in={openAttendance} timeout="auto" unmountOnExit>
               <List component="div" disablePadding>
-                {attendanceNav.map((item) => (
+                {patientNav.map((item) => (
+                  <NavItem
+                    className={classes.dropdownList}
+                    href={item.href}
+                    key={item.title}
+                    title2={item.title}
+                    icon={item.icon}
+                  />
+                ))}
+              </List>
+            </Collapse>
+            <ListItem button onClick={handleClickRequest}>
+              <ListItemIcon className={classes.dropdownIcon}>
+                <Receipt />
+              </ListItemIcon>
+              <Typography className={classes.navTitle} variant="body2">
+                Requests     
+              </Typography>{" "}
+              {openRequest ? (
+                <ExpandMore style={{ color: "#637381", marginLeft: "90px" }} />
+              ) : (
+                <ChevronRight
+                  style={{ color: "#637381", marginLeft: "90px" }}
+                />
+              )}
+            </ListItem>
+            <Collapse in={openRequest} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                {requestNav.map((item) => (
                   <NavItem
                     className={classes.dropdownList}
                     href={item.href}
@@ -333,7 +375,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
                 <ExpandMore style={{ color: "#637381", marginLeft: "70px" }} />
               ) : (
                 <ChevronRight
-                  style={{ color: "#637381", marginLeft: "70px" }}
+                  style={{ color: "#637381", marginLeft: "67px" }}
                 />
               )}
             </ListItem>
