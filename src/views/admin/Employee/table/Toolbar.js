@@ -24,7 +24,7 @@ export default ({ className, ...rest }) => {
   return (
     <div className={clsx(classes.root, className)} {...rest}>
       <Typography color="textSecondary" gutterBottom variant="h2">
-        Employees
+        Patient
       </Typography>
       <Breadcrumbs
         separator={<NavigateNext fontSize="small" />}
@@ -33,7 +33,7 @@ export default ({ className, ...rest }) => {
         <Link color="inherit" href="/">
           Home
         </Link>
-        <Link color="textPrimary">List of Employees</Link>
+        <Link color="textPrimary">List of Patients</Link>
       </Breadcrumbs>
     </div>
   );

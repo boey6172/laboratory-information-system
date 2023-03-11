@@ -174,12 +174,12 @@ export default ({ className, ...rest }) => {
             startIcon={<AddBox />}
             onClick={(e) => dispatch({ type: "create" })}
           >
-            Add Employee
+            Add Patient
           </Button>
         </Grid>{" "}
         <Grid item md={1} lg={1}></Grid>
         <Grid item md={4} xs={12}>
-          <Controller
+          {/* <Controller
             control={control}
             name="birthMonth"
             rules={{ required: "Birth Month is required" }}
@@ -215,7 +215,7 @@ export default ({ className, ...rest }) => {
                 </FormControl>
               </>
             )}
-          />
+          /> */}
         </Grid>
         <Grid item md={1} lg={1}></Grid>
         <Grid item xs={12} md={4} lg={4}>
@@ -224,7 +224,7 @@ export default ({ className, ...rest }) => {
               <InputBase
                 className={classes.inputStyle}
                 onChange={(e) => setSearch(e.target.value)}
-                placeholder="Search Employee"
+                placeholder="Search Patient"
                 inputProps={{ "aria-label": "Search Employee ID Number" }}
               />
               <IconButton
@@ -244,15 +244,15 @@ export default ({ className, ...rest }) => {
             <TableHead>
               <TableRow style={{ background: "#e0e0e0" }}>
                 <TableCell>No</TableCell>
-                <TableCell>Employee&apos;s Name</TableCell>
+                <TableCell>Patient Name&apos;s Name</TableCell>
                 {/* <TableCell>Contract Number</TableCell>
                 <TableCell>ID Number</TableCell> */}
 
-                <TableCell>Rank</TableCell>
+                {/* <TableCell>Rank</TableCell> */}
                 {/* <TableCell>Company</TableCell> */}
-                <TableCell>Assigned Region</TableCell>
+                {/* <TableCell>Assigned Region</TableCell> */}
                 {/* <TableCell>Department</TableCell> */}
-                <TableCell>Start Date</TableCell>
+                <TableCell>Created Date</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -281,13 +281,13 @@ export default ({ className, ...rest }) => {
                       {employee?.employee_info?.identification_number}
                     </TableCell> */}
                     <TableCell>
-                      {employee?.Rank?.rank}
+                      {/* {employee?.Rank?.rank} */}
                     </TableCell>
                     {/* <TableCell>
                       {employee?.employee_info?.company?.name}
                     </TableCell> */}
                     <TableCell>
-                      {employee?.RegionAssignment.regionAssignment}
+                      {/* {employee?.RegionAssignment.regionAssignment} */}
                     </TableCell>
                     {/* <TableCell>
                       {employee?.employee_info?.department?.name}

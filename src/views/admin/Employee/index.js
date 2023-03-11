@@ -113,7 +113,7 @@ export default () => {
     <ParentContext.Provider 
     value={{ dispatch, employee: employee }}
     >
-      <Page className={classes.root} title="Employees">
+      <Page className={classes.root} title="Patient">
         <Container maxWidth={false}>
           <Box mt={3}>{setScreen(state)}</Box>
         </Container>

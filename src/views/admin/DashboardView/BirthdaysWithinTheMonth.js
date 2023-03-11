@@ -95,7 +95,7 @@ const TotalCustomers = ({ className, ...rest }) => {
                 fontFamily: "Be Vietnam, sans-serif",
               }}
             >
-              Birthday's of The month
+              Total Requests Today
             </Typography>
             <Typography
               color="textPrimary"

@@ -205,12 +205,12 @@ const states = {
       mobile_number: "",
       photo: "",
     },
-    credential: {
-      roles: ["employee"],
-      username: "",
-      password: "",
-      confirm_password: "",
-    },
+    // credential: {
+    //   roles: ["employee"],
+    //   username: "",
+    //   password: "",
+    //   confirm_password: "",
+    // },
     location: {
       region: "",
       province: "",
@@ -572,7 +572,7 @@ export default ({ action }) => {
             <Box className={classes.head} align="center">
               <div>
                 <img
-                  src="/static/images/redcatlogos.7e640b17.png"
+                  src="/static/images/patient.png"
                   alt=""
                   width="200"
                   height="80"
@@ -585,7 +585,7 @@ export default ({ action }) => {
                   <TableHead>
                     <TableRow>
                       <TableCell>
-                        <Stepper
+                        {/* <Stepper
                           alternativeLabel
                           activeStep={activeStep}
                           connector={<QontoConnector />}
@@ -597,7 +597,7 @@ export default ({ action }) => {
                               </StepLabel>
                             </Step>
                           ))}
-                        </Stepper>
+                        </Stepper> */}
                       </TableCell>
                     </TableRow>
                   </TableHead>
@@ -625,7 +625,7 @@ export default ({ action }) => {
                           Back
                         </Button>
                       )}
-                      {activeStep === steps.length - 1 ? (
+                      {/* {activeStep === steps.length - 1 ? ( */}
                         <Button
                           variant="contained"
                           color="primary"
@@ -634,7 +634,7 @@ export default ({ action }) => {
                         >
                           Done
                         </Button>
-                      ) : (
+                      {/* ) : (
                         <Button
                           variant="contained"
                           color="primary"
@@ -643,7 +643,7 @@ export default ({ action }) => {
                         >
                           Next
                         </Button>
-                      )}
+                      )} */}
                     </div>
                   </React.Fragment>
                 )}

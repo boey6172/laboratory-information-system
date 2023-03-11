@@ -39,7 +39,7 @@ export default () => {
   const classes = useStyles();
 
   let toolbarInfo = {
-    title: "Addd Employee",
+    title: "Add Patient",
     links: [
       {
         name: "Home",
@@ -68,11 +68,11 @@ export default () => {
       mobile_number: "",
       photo: "",
     },
-    credential: {
-      username: "",
-      password: "",
-      confirm_password: "",
-    },
+    // credential: {
+    //   username: "",
+    //   password: "",
+    //   confirm_password: "",
+    // },
   };
 
   // const onRedirect = () => {

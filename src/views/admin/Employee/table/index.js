@@ -10,14 +10,14 @@ import TableList from "./TableList";
 
 export default () => {
   let toolbarInfo = {
-    title: "Employees",
+    title: "Patients",
     links: [
       {
         name: "Home",
         href: "/admin/dashboard"
       },
       {
-        name: "List of Employees",
+        name: "List of Patient",
         href: ""
       }
     ]
