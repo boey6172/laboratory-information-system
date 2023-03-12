@@ -10,22 +10,38 @@ const useAuthentication = () => {
   };
 
   const getUser = () => {
-    let user = JSON.parse(localStorage.getItem("user"));
-    if (user) {
-      if(user.role === "c9cb1a54-3c62-4976-977f-5a1b5a8e494c")
-        user = { ...user, authenticated: true, role:"admin"};
-      else
-      user = { ...user, authenticated: true, role:"employee"};
-    } else {
-      user = { ...user, authenticated: false };
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+  
+      if (user) {
+        const role = user.role === "c9cb1a54-3c62-4976-977f-5a1b5a8e494c"
+          ? "admin"
+          : "employee";
+        
+        return { ...user, authenticated: true, role };
+      } else {
+        return { authenticated: false };
+      }
+    } catch (error) {
+      console.error(error);
+      return { authenticated: false };
     }
-    return user;
   };
 
   const setUser = (user) => {
-    localStorage.setItem("user", JSON.stringify(user)  );
-    
+    try {
+      if (typeof user !== "object" || user === null) {
+        throw new Error("User argument must be an object");
+      }
+  
+      localStorage.setItem("user", JSON.stringify(user));
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
   };
+  
   const getRole = (user) => {
     
     
