@@ -71,38 +71,36 @@ router.post("/changePassword", async(req,res) =>{
 });
 
 
-router.post("/login",async(req,res) => { 
-    const {username,password} = req.body;
-
+router.post("/login", async (req, res) => {
+    const { username, password } = req.body;
+  
     const user = await Users.findOne({
-        where: {username:username}
-    })
-
-    if (!user) res.json({error:"Account does not exist"})
-
-    bcrypt.compare(password, user.password).then((match)=>{
-        if(!match) res.json({error:" Wrong Username and Password"})
-
-        const accessToken = sign({username:user.username,id:user.id},
-            "pbpbrns12301234",
-            // {
-            //     // expiresIn: 1,
-            // }
-        )
-    const data = {
-        token:'',
-        user:{
-            role:'',
-            employee:''
-        }
-        
+      where: { username: username }
+    });
+  
+    if (!user) {
+      return res.status(404).json({ error: "User not found" });
     }
-        data.user.role = user.role
-        data.token = accessToken
-        data.user.employee = user.employee
-        res.json(data);
-    })
-});
+  
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      return res.status(401).json({ error: "Incorrect password" });
+    }
+  
+    const accessToken = sign({ username: user.username, id: user.id }, "pbpbrns12301234", {
+      expiresIn: 60 * 60 * 24,
+    });
+  
+    const data = {
+      token: accessToken,
+      user: {
+        role: user.role,
+        employee: user.employee,
+      },
+    };
+  
+    res.json(data);
+  });
 
 router.post("/checkUsername",async(req,res) => { 
     const {username} = req.body;
