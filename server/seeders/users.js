@@ -7,7 +7,7 @@ module.exports = {
         email:"boey6172@gmail.com",
         contactNumber:"09270748777",
         employee:1,
-        role:"d0eff7f7-2740-44ca-850f-836eb28093e6",
+        role:"c9cb1a54-3c62-4976-977f-5a1b5a8e494c",
         createdAt: new Date(),
         updatedAt: new Date()
       },
