@@ -39,36 +39,48 @@ router.post("/", async(req,res) =>{
 
 });
 
-router.post("/changePassword", async(req,res) =>{
-    const {employee,old_password, confirm_password, new_password} = req.body
+router.post("/changePassword", async (req, res) => {
+    const { employee, old_password, confirm_password, new_password } = req.body;
+  
     try {
-        const user = await Users.findOne({
-            where: {employee:employee}
-        })
-        if(new_password !== confirm_password) res.json({error:" Confirm Password Does not Match"})
-        
-        bcrypt.compare(old_password, user.password).then((match)=>{
-            if(!match) res.json({error:" Old Password Does not Match"})
-            // res.json(match)
-            bcrypt.hash(new_password, 10).then((hash) =>{
-                Users.update({
-                    password:hash,
-                },{
-                    where:{
-                        id:user.id
-                    }
-                });
-            })
-            res.json("Password Has Been changed");
-        })
-        
-        
+      const user = await Users.findOne({
+        where: { employee: employee },
+      });
+  
+      if (!user) {
+        return res.status(404).json({ error: "User not found" });
+      }
+  
+      if (new_password !== confirm_password) {
+        return res.status(400).json({ error: "Confirm Password Does not Match" });
+      }
+  
+      const match = await bcrypt.compare(old_password, user.password);
+  
+      if (!match) {
+        return res.status(400).json({ error: "Old Password Does not Match" });
+      }
+  
+      const hash = await bcrypt.hash(new_password, 10);
+  
+      await Users.update(
+        {
+          password: hash,
+        },
+        {
+          where: {
+            id: user.id,
+          },
+        }
+      );
+  
+      res.json({ message: "Password has been changed" });
     } catch (error) {
-        console.log(error)
+      console.log(error);
+      res.status(500).json({ error: "Server error" });
     }
-
-
-});
+  });
+  
 
 
 router.post("/login", async (req, res) => {
