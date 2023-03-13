@@ -11,6 +11,39 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        id: '9c23bab0-5ecf-4568-a235-373c96632b67',
+        username:"encoder1",
+        password:"$2b$10$lv.iTbK8xNi5TqE5RiDRg.Z2qt35f1kPxJSiJLwPpma8g9BFrgqHq",
+        email:"boey6172@gmail.com",
+        contactNumber:"09270748777",
+        employee:1,
+        role:"593fa9fa-68be-4da4-afc6-3eec60960ced",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: '9c23bab0-5ecf-4568-a235-373c96632b67',
+        username:"examiner1",
+        password:"$2b$10$lv.iTbK8xNi5TqE5RiDRg.Z2qt35f1kPxJSiJLwPpma8g9BFrgqHq",
+        email:"boey6172@gmail.com",
+        contactNumber:"09270748777",
+        employee:1,
+        role:"4feb7d30-c245-4f21-8f03-11fd11d72c8a",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: '9c23bab0-5ecf-4568-a235-373c96632b67',
+        username:"doctor1",
+        password:"$2b$10$lv.iTbK8xNi5TqE5RiDRg.Z2qt35f1kPxJSiJLwPpma8g9BFrgqHq",
+        email:"boey6172@gmail.com",
+        contactNumber:"09270748777",
+        employee:1,
+        role:"b6962235-1933-4eae-bda7-d4e92d84fe91",
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
     },
     down: (queryInterface, Sequelize) => {
