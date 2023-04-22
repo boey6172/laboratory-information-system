@@ -1,23 +1,23 @@
 module.exports = (sequelize, DataTypes) => {
 
-    const Laboratories = sequelize.define("Laboratory", {
+    const Exams = sequelize.define("Exam", {
         id:{
             type:DataTypes.UUID,
             defaultValue:DataTypes.UUIDV4,
             // allowNull: false,
             primaryKey:true,
         },
-        description:{
+        exam:{
             type:DataTypes.STRING,
             allowNull: false,
         },
-        signatory:{
+        examiner:{
             type:DataTypes.UUID,
             allowNull: false,
         },
-        signature:{
+        laboratory_id:{
             type:DataTypes.STRING,
-            allowNull: true,
+            allowNull: false,
         },
         created_by:{
             type:DataTypes.UUID,
@@ -32,19 +32,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: true,
         },
     })
-    Laboratories.associate = (models) => {
-        Laboratories.hasMany(models.Users,{
-            foreignKey: 'signature',
+    Exams.associate = (models) => {
+        Exams.hasMany(models.Users,{
+            foreignKey: 'examiner',
             onDelete:'NO ACTION'
         })
-        Laboratories.hasMany(models.Users,{
-            foreignKey: 'created_by',
-            onDelete:'NO ACTION'
-        })
-        Laboratories.hasMany(models.Users,{
-            foreignKey: 'updated_by',
+        Exams.hasMany(models.Laboratory,{
+            foreignKey: 'laboratory_id',
             onDelete:'NO ACTION'
         })
     }
-    return Laboratories
+    return Exams
 } 

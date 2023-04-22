@@ -74,18 +74,19 @@ router.post("/", async(req,res) =>{
             where: {username:username}
         })
         if (user) res.json({error:"Account username already exist"})
-        const data = await Employees.create(employee);
+        // const data = await Employees.create(employee);
         bcrypt.hash(password, 10).then((hash) =>{
             Users.create({
                 username:username,
                 password:hash,
-                employee:data.id,
+                employee:1,
                 role:role,
                 email:email,
                 contact_no:contactNumber
             })
+            console.log(hash)
         })
-        res.json("User Created");
+        res.json(hash);
         
         
     } catch (error) {
