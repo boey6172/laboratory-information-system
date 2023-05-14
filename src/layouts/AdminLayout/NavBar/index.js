@@ -100,7 +100,7 @@ const requestNav = [
 {
   href: "/admin/maintenance/users",
   icon: "",
-  title: " • Users",
+  title: " • Create Requests",
 },
 ];
 
@@ -120,30 +120,35 @@ const employeeNav = [
 const adminMaintenance = [
 
   {
-    href: '/admin/maintenance/rank',
+    href: "/admin/maintenance/users",
     icon: "",
-    title: '• Rank'
+    title: " • Users",
   },
   {
-    href: '/admin/maintenance/documenttype',
-    icon: "" ,
-    title: '• Document Type '
-  },
-  {
-    href: '/admin/maintenance/religion',
+    href: "/admin/maintenance/package",
     icon: "",
-    title: '• Religion '
+    title: " • Package",
   },
-  {
-    href: '/admin/maintenance/regionAssignment',
-    icon: "",
-    title: '• Region Assignment '
-  },
-  {
-    href: '/admin/maintenance/Exams',
-    icon: "",
-    title: '• Examinations '
-  },
+  // {
+  //   href: '/admin/maintenance/documenttype',
+  //   icon: "" ,
+  //   title: '• Document Type '
+  // },
+  // {
+  //   href: '/admin/maintenance/religion',
+  //   icon: "",
+  //   title: '• Religion '
+  // },
+  // {
+  //   href: '/admin/maintenance/regionAssignment',
+  //   icon: "",
+  //   title: '• Region Assignment '
+  // },
+  // {
+  //   href: '/admin/maintenance/Exams',
+  //   icon: "",
+  //   title: '• Examinations '
+  // },
 ];
 
 const useStyles = makeStyles(() => ({

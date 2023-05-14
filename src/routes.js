@@ -40,6 +40,10 @@ import AccountEmployeeSettings from '../src/views/employee/AccountSettings';
 
 import DashboardView from '../src/views/admin/DashboardView';
 
+// create Packages
+import CreatePackages from '../src/views/admin/maintenances/package/create';
+import Package from '../src/views/admin/maintenances/package';
+
 
 // import AccountSettings from '../src/views/employee';
 
@@ -88,12 +92,12 @@ const routes = [
         element: <PrivateAdminRoute component= {AccountSettings} />
       },
       {
-        path: 'maintenance/createrank', 
-        element: <PrivateAdminRoute component= {CreateRank} />
+        path: 'maintenance/createpackage', 
+        element: <PrivateAdminRoute component= {CreatePackages} />
       },
       {
-        path: 'maintenance/rank', 
-        element: <PrivateAdminRoute component= {Rank} />
+        path: 'maintenance/package', 
+        element: <PrivateAdminRoute component= {Package} />
       },
       {
         path: 'maintenance/users', 
